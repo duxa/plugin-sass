@@ -29,7 +29,7 @@ const sassImporter = (request, done) => {
   // https://github.com/sass/libsass/issues/1695
   resolvePath(request).then(resolvedUrl => {
     resolved = resolvedUrl;
-    const partialPath = resolved.replace(/\/([^/]*)$/, '/_$1');
+    const partialPath = resolved.replace(/\/([^/]*)$/, '/$1');
     return reqwest(partialPath);
   })
     .then(resp => {
